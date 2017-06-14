@@ -1,0 +1,195 @@
+SUB(winapi_input, $win_hwnd, $str)
+    $KEYDOWN = 0x0100  //WM_KEYDOWN message
+    $KEYUP = 0x0101  //WM_KEYUP message
+
+    FOR($a=1,$a<STRLEN($str) + 1) 
+        $s = STRCUT($str, $a, 1)
+        IF ($s = "1")
+            $winapi_char_code = #1
+        END_IF
+        IF ($s = "2")
+            $winapi_char_code = #2
+        END_IF
+        IF ($s = "3")
+            $winapi_char_code = #3
+        END_IF
+        IF ($s = "4")
+            $winapi_char_code = #4
+        END_IF
+        IF ($s = "5")
+            $winapi_char_code = #5
+        END_IF
+        IF ($s = "6")
+            $winapi_char_code = #6
+        END_IF
+        IF ($s = "7")
+            $winapi_char_code = #7
+        END_IF
+        IF ($s = "8")
+            $winapi_char_code = #8
+        END_IF
+        IF ($s = "9")
+            $winapi_char_code = #9
+        END_IF
+        IF ($s = "A")
+            $winapi_char_code = #A
+        END_IF
+        IF ($s = "B")
+            $winapi_char_code = #B
+        END_IF
+        IF ($s = "C")
+            $winapi_char_code = #C
+        END_IF
+        IF ($s = "D")
+            $winapi_char_code = #D
+        END_IF
+        IF ($s = "E")
+            $winapi_char_code = #E
+        END_IF
+        IF ($s = "F")
+            $winapi_char_code = #F
+        END_IF
+        IF ($s = "G")
+            $winapi_char_code = #G
+        END_IF
+        IF ($s = "H")
+            $winapi_char_code = #H
+        END_IF
+        IF ($s = "I")
+            $winapi_char_code = #I
+        END_IF
+        IF ($s = "J")
+            $winapi_char_code = #J
+        END_IF
+        IF ($s = "K")
+            $winapi_char_code = #K
+        END_IF
+        IF ($s = "L")
+            $winapi_char_code = #L
+        END_IF
+        IF ($s = "M")
+            $winapi_char_code = #M
+        END_IF
+        IF ($s = "N")
+            $winapi_char_code = #N
+        END_IF
+        IF ($s = "O")
+            $winapi_char_code = #O
+        END_IF
+        IF ($s = "P")
+            $winapi_char_code = #P
+        END_IF
+        IF ($s = "Q")
+            $winapi_char_code = #Q
+        END_IF
+        IF ($s = "R")
+            $winapi_char_code = #R
+        END_IF
+        IF ($s = "S")
+            $winapi_char_code = #S
+        END_IF
+        IF ($s = "T")
+            $winapi_char_code = #T
+        END_IF
+        IF ($s = "U")
+            $winapi_char_code = #U
+        END_IF
+        IF ($s = "V")
+            $winapi_char_code = #V
+        END_IF
+        IF ($s = "W")
+            $winapi_char_code = #W
+        END_IF
+        IF ($s = "X")
+            $winapi_char_code = #X
+        END_IF
+        IF ($s = "Y")
+            $winapi_char_code = #Y
+        END_IF
+        IF ($s = "Z")
+            $winapi_char_code = #Z
+        END_IF
+        IF ($s = "a")
+            $winapi_char_code = #a
+        END_IF
+        IF ($s = "b")
+            $winapi_char_code = #b
+        END_IF
+        IF ($s = "c")
+            $winapi_char_code = #c
+        END_IF
+        IF ($s = "d")
+            $winapi_char_code = #d
+        END_IF
+        IF ($s = "e")
+            $winapi_char_code = #e
+        END_IF
+        IF ($s = "f")
+            $winapi_char_code = #f
+        END_IF
+        IF ($s = "g")
+            $winapi_char_code = #g
+        END_IF
+        IF ($s = "h")
+            $winapi_char_code = #h
+        END_IF
+        IF ($s = "i")
+            $winapi_char_code = #i
+        END_IF
+        IF ($s = "j")
+            $winapi_char_code = #j
+        END_IF
+        IF ($s = "k")
+            $winapi_char_code = #k
+        END_IF
+        IF ($s = "l")
+            $winapi_char_code = #l
+        END_IF
+        IF ($s = "m")
+            $winapi_char_code = #m
+        END_IF
+        IF ($s = "n")
+            $winapi_char_code = #n
+        END_IF
+        IF ($s = "o")
+            $winapi_char_code = #o
+        END_IF
+        IF ($s = "p")
+            $winapi_char_code = #p
+        END_IF
+        IF ($s = "q")
+            $winapi_char_code = #q
+        END_IF
+        IF ($s = "r")
+            $winapi_char_code = #r
+        END_IF
+        IF ($s = "s")
+            $winapi_char_code = #s
+        END_IF
+        IF ($s = "t")
+            $winapi_char_code = #t
+        END_IF
+        IF ($s = "u")
+            $winapi_char_code = #u
+        END_IF
+        IF ($s = "v")
+            $winapi_char_code = #v
+        END_IF
+        IF ($s = "w")
+            $winapi_char_code = #w
+        END_IF
+        IF ($s = "x")
+            $winapi_char_code = #x
+        END_IF
+        IF ($s = "y")
+            $winapi_char_code = #y
+        END_IF
+        IF ($s = "z")
+            $winapi_char_code = #z
+        END_IF
+       // POSTMESSAGE ($win_hwnd, $KEYDOWN , $winapi_char_code , 0) 
+       // WAITMS(100)
+        POSTMESSAGE ($win_hwnd, $KEYUP , $winapi_char_code , 0)
+        WAITMS(20) 
+    END_CYC
+END_SUB
