@@ -1,19 +1,31 @@
-$hwnd = HGET(1125,456)
+$hwnd = HGET(1042,498)
 
-WNDGETINFO($hwnd, $xpos, $ypos, $width, $height)   
-print($xpos)
-print($ypos)
-print($width)
-print($height)
-$xpos = 8
-$ypos = 50
-$width = 640
-$height = 435
+WNDGETINFO($hwnd, $xpos, $ypos, $width, $height)  
+IF ($xpos < 0)
+	$xpos = 0
+	WNDPOS($hwnd,$xpos,$ypos)
+END_IF
+IF ($ypos < 0)	
+	$ypos = 0
+	WNDPOS($hwnd,$xpos,$ypos)
+END_IF
+
+print("$xpos = ",$xpos)
+print("$ypos = ",$ypos)
+print("$width = ",$width)
+print("$height = ",$height)
+$xpos = 0
+$ypos = 0
+$width = 1554
+$height = 916
 
 GETSCREEN
-print(PXLCRC($xpos,$ypos,$width,$height))
+print("$window_checksum = ",PXLCRC($xpos,$ypos,$width,$height))
 
-WNDPOS($hwnd,$xpos,$ypos)
-WNDSIZE($hwnd,$width,$height)
+//WNDPOS($hwnd,$xpos,$ypos)
+//WNDSIZE($hwnd,$width,$height)
+WNDSETINFO($hwnd, $xpos, $ypos, $width, $height)
+
+//480721222
 
 halt // for single run
